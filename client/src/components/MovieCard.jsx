@@ -5,9 +5,12 @@ const MovieCard = ({ movie }) => {
   const handleAddToList = async () => {
     try {
       const { Title } = movie;
-      const res = await axios.post("http://localhost:5000/api/lists/add", {
-        name: Title,
-      });
+      const res = await axios.post(
+        "http://movie-hub-server-phi.vercel.app/api/lists/add",
+        {
+          name: Title,
+        }
+      );
 
       console.log("Movie added to list:", res.data);
       // Optionally, you can fetch the updated lists here

@@ -10,7 +10,7 @@ const app = express();
 connectDB();
 
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: "https://movie-hub-client.vercel.app",
   optionsSuccessStatus: 200,
 };
 
