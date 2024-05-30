@@ -5,25 +5,21 @@ const router = express.Router();
 
 router.use(auth);
 
-// Create a new list or update an existing one
 router.post("/add", auth, async (req, res) => {
-  const { name } = req.body; // Assuming the movie title is sent as the name
+  const { name } = req.body;
 
   try {
-    // Check if a list with the same name already exists
     let existingList = await List.findOne({ name });
 
     if (existingList) {
-      // Update the existing list
-      existingList.movies.push({ Title: name }); // Assuming the movie title is used as the name for the movie
+      existingList.movies.push({ Title: name });
       await existingList.save();
       res.json(existingList);
     } else {
-      // Create a new list
       const newList = new List({
         user: req.user.id,
         name,
-        movies: [], // Initially, no movies in the list
+        movies: [],
       });
       await newList.save();
       res.json(newList);

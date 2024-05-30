@@ -22,7 +22,7 @@ const Register = ({ setIsAuthenticated }) => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://movie-hub-server-phi.vercel.app/api/users/register",
+        "https://movie-hub-server-phi.vercel.app/api/users/register",
         {
           username,
           email,

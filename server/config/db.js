@@ -4,7 +4,6 @@ dotenv.config();
 
 const MONGO_URI = process.env.MONGO_URI;
 
-// Destructure Schema from mongoose
 const { Schema } = mongoose;
 
 const connectDB = async () => {
@@ -46,7 +45,7 @@ const userSchema = new Schema({
 const listSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
-    ref: "User", // Reference to the User model
+    ref: "User",
     required: true,
   },
   name: {
@@ -56,12 +55,11 @@ const listSchema = new Schema({
   movies: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Movie", // Reference to the Movie model
+      ref: "Movie",
     },
   ],
 });
 
-// Define models
 const User = mongoose.model("User", userSchema);
 const List = mongoose.model("List", listSchema);
 

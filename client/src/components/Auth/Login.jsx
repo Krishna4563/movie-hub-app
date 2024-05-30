@@ -22,10 +22,11 @@ const Login = ({ setIsAuthenticated }) => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://movie-hub-server-phi.vercel.app/api/users/login",
+        "https://movie-hub-server-phi.vercel.app/api/users/login",
         {
           email,
           password,
+          token,
         }
       );
       localStorage.setItem("token", res.data.token);

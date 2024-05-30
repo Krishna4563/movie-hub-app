@@ -17,7 +17,7 @@ const Home = () => {
           },
         };
         const res = await axios.get(
-          "http://movie-hub-server-phi.vercel.app/api/lists/data",
+          "https://movie-hub-server-phi.vercel.app/api/lists/data",
           config
         );
         setLists(res.data);

@@ -17,7 +17,7 @@ const MovieSearch = () => {
 
     try {
       const res = await axios.get(
-        `http://www.omdbapi.com/?s=${trimmedQuery}&apikey=ce8d773a`
+        `https://www.omdbapi.com/?t=${trimmedQuery}&apikey=ce8d773a`
       );
 
       if (res.data.Response === "True") {
