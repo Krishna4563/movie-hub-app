@@ -6,7 +6,7 @@ const Login = ({ setIsAuthenticated }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [alert, setAlert] = useState({ visible: false, message: "" });
-  const [loginDetail, setLoginDetail] = useState("");
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -26,12 +26,11 @@ const Login = ({ setIsAuthenticated }) => {
         {
           email,
           password,
-          token,
         }
       );
       localStorage.setItem("token", res.data.token);
       setIsAuthenticated(true);
-      setLoginDetail(email);
+
       navigate("/home", { state: { loginDetail: email } });
     } catch (error) {
       setAlert({ visible: true, message: error.response.data.msg });
