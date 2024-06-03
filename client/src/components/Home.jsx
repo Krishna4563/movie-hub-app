@@ -17,7 +17,7 @@ const Home = () => {
           },
         };
         const res = await axios.get(
-          "http://localhost:5000/api/lists/data",
+          "https://movie-hub-server-nine.vercel.app/api/lists/data",
           config
         );
 

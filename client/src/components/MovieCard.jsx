@@ -7,7 +7,7 @@ const MovieCard = ({ movie }) => {
 
       const { Title } = movie;
       const res = await axios.post(
-        "http://localhost:5000/api/lists/add",
+        "https://movie-hub-server-nine.vercel.app/api/lists/add",
         {
           name: Title,
         },
