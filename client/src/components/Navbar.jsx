@@ -18,6 +18,7 @@ const Navbar = () => {
       <p className=" text-white">
         User : <span className="text-cyan-300">{loginDetail}</span>
       </p>
+
       <button
         onClick={handleLogout}
         className=" w-32 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"

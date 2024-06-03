@@ -30,7 +30,6 @@ router.post("/add", async (req, res) => {
   }
 });
 
-// Get all lists for the logged-in user
 router.get("/data", async (req, res) => {
   try {
     const lists = await List.find({ user: req.user.id });

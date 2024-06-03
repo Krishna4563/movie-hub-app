@@ -62,7 +62,6 @@ const movieSchema = new mongoose.Schema({
   },
 });
 
-// Define list schema
 const listSchema = new mongoose.Schema(
   {
     user: {
@@ -73,9 +72,9 @@ const listSchema = new mongoose.Schema(
     name: {
       type: String,
       required: true,
-      unique: true, // To ensure the list name is unique for each user
+      unique: true,
     },
-    movies: [movieSchema], // Array of movies following the defined sub-schema
+    movies: [movieSchema],
     isPublic: {
       type: Boolean,
       default: false,

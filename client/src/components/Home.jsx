@@ -43,8 +43,11 @@ const Home = () => {
 
   return (
     <div className="bg-custom-dark-blue p-4">
+      <h1 className=" flex justify-center items-center mb-5 mt-5 text-red-500 font-bold text-4xl">
+        Movie Hub
+      </h1>
       <Navbar />
-      <div className="flex flex-col gap-6 justify-between items-center container p-4 bg-custom-dark-blue min-h-screen">
+      <div className="flex flex-col gap-4 justify-between items-center container p-4 bg-custom-dark-blue min-h-screen">
         <MovieSearch />
         {lists.length >= 1 && (
           <div className="mt-8">
