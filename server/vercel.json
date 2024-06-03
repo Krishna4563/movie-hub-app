@@ -1,8 +1,6 @@
 {
   "rewrites": [
-    { "source": "/api/lists/add", "destination": "/server/routes/listRoutes.js" },
-    { "source": "/api/lists/data", "destination": "/server/routes/listRoutes.js" },
-    { "source": "/api/users", "destination": "/server/routes/userRoutes.js" },
+    
     { "source": "/(.*)", "destination": "/server/index.js" }
   ]
 }
