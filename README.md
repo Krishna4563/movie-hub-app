@@ -6,7 +6,7 @@ This is a movie hub app, which lets users to search for movies and add them to t
 Once registered, the users can directly login into the app using proper credentials on their next usage. The user details and the movies added to their list are saved in a MongoDB database.
 The movies are fetched using an external API.
 
-The app is styled using Tailwiind CSS and is completely mobile responsive.
+The app is styled using Tailwind CSS and is completely mobile responsive.
 
 Tech stack used for frontend - React(using Vite) and Tailwind CSS (styling framework). 
 Tech stack used for Backend - Node.js and Express.js (for creating API endpoints), MongoDB (for storing user and list details) and JWT(jsonwebtoken) for user authentication.
