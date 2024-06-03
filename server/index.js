@@ -13,7 +13,6 @@ const corsOptions = {
   origin: ["https://movie-hub-client.vercel.app"],
   methods: ["POST", "GET", "PUT", "DELETE"],
   credentials: true,
-  optionsSuccessStatus: 200,
 };
 
 app.use(cors(corsOptions));
