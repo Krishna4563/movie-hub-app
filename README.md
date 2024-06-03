@@ -2,8 +2,7 @@
 
 [Live App Link](https://movie-hub-client.vercel.app)
 
-This is a movie hub app, which lets users to search for movies and add them to their list. The app is gated with authentication and users have to register and login in order to access the app.
-Once registered, the users can directly login into the app using proper credentials on their next usage. The user details and the movies added to their list are saved in a MongoDB database.
+This is a movie hub app, which lets users to search for movies and add them to their list. The app is gated with authentication, requiring users to register and log in to access the app. Once registered, users can log in directly with their credentials on subsequent visits. User details and movies added to their lists are saved in a MongoDB database.
 
 The movies are fetched using an external API. [Link](https://www.omdbapi.com)
 
