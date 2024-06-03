@@ -4,7 +4,8 @@
 
 This is a movie hub app, which lets users to search for movies and add them to their list. The app is gated with authentication and users have to register and login in order to access the app.
 Once registered, the users can directly login into the app using proper credentials on their next usage. The user details and the movies added to their list are saved in a MongoDB database.
-The movies are fetched using an external API.
+
+The movies are fetched using an external API. [Link](https://www.omdbapi.com)
 
 The app is styled using Tailwind CSS and is completely mobile responsive.
 
