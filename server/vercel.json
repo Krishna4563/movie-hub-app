@@ -1,20 +1,8 @@
 {
-  "routes": [
-    {
-      "src": "/api/lists/add",
-      "dest": "/server/routes/listRoutes.js"
-    },
-    {
-      "src": "/api/lists/data",
-      "dest": "/server/routes/listRoutes.js"
-    },
-    {
-      "src": "/api/users",
-      "dest": "/server/routes/userRoutes.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/server/index.js"
-    }
+  "rewrites": [
+    { "source": "/api/lists/add", "destination": "/server/routes/listRoutes.js" },
+    { "source": "/api/lists/data", "destination": "/server/routes/listRoutes.js" },
+    { "source": "/api/users", "destination": "/server/routes/userRoutes.js" },
+    { "source": "/(.*)", "destination": "/server/index.js" }
   ]
 }
