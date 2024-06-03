@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const Register = ({ setIsAuthenticated }) => {
+const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,16 +21,13 @@ const Register = ({ setIsAuthenticated }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        "https://movie-hub-server-phi.vercel.app/api/users/register",
-        {
-          username,
-          email,
-          password,
-        }
-      );
+      const res = await axios.post("http://localhost:5000/api/users/register", {
+        username,
+        email,
+        password,
+      });
       localStorage.setItem("token", res.data.token);
-      setIsAuthenticated(true);
+      // setIsAuthenticated(true);
       navigate("/login");
     } catch (error) {
       setAlert({ visible: true, message: error.response.data.msg });

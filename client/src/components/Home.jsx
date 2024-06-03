@@ -17,20 +17,34 @@ const Home = () => {
           },
         };
         const res = await axios.get(
-          "https://movie-hub-server-phi.vercel.app/api/lists/data",
+          "http://localhost:5000/api/lists/data",
           config
         );
-        setLists(res.data);
+
+        const modifiedLists = res.data.map((list) => ({
+          ...list,
+          movies: list.movies.map((movie) => ({
+            Title: movie.Title,
+            Year: movie.Year,
+            Poster: movie.Poster,
+            imdbID: movie.imdbID,
+          })),
+        }));
+        setLists(modifiedLists);
       }
     };
 
     fetchLists();
+
+    const interval = setInterval(fetchLists, 1000);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="bg-custom-dark-blue p-4">
       <Navbar />
-      <div className="flex flex-col gap-6 justify-between items-center container  p-4 bg-custom-dark-blue min-h-screen">
+      <div className="flex flex-col gap-6 justify-between items-center container p-4 bg-custom-dark-blue min-h-screen">
         <MovieSearch />
         {lists.length >= 1 && (
           <div className="mt-8">

@@ -42,23 +42,47 @@ const userSchema = new Schema({
   },
 });
 
-const listSchema = new Schema({
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
-    required: true,
-  },
-  name: {
+const movieSchema = new mongoose.Schema({
+  Title: {
     type: String,
     required: true,
   },
-  movies: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Movie",
-    },
-  ],
+  Year: {
+    type: String,
+  },
+  Director: {
+    type: String,
+  },
+  Poster: {
+    type: String,
+  },
+  imdbID: {
+    type: String,
+    required: true,
+  },
 });
+
+// Define list schema
+const listSchema = new mongoose.Schema(
+  {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
+    name: {
+      type: String,
+      required: true,
+      unique: true, // To ensure the list name is unique for each user
+    },
+    movies: [movieSchema], // Array of movies following the defined sub-schema
+    isPublic: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  { timestamps: true }
+);
 
 const User = mongoose.model("User", userSchema);
 const List = mongoose.model("List", listSchema);

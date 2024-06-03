@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.use(auth);
 
-router.post("/add", auth, async (req, res) => {
+router.post("/add", async (req, res) => {
   const { name } = req.body;
 
   try {
@@ -31,7 +31,7 @@ router.post("/add", auth, async (req, res) => {
 });
 
 // Get all lists for the logged-in user
-router.get("/data", auth, async (req, res) => {
+router.get("/data", async (req, res) => {
   try {
     const lists = await List.find({ user: req.user.id });
     res.json(lists);

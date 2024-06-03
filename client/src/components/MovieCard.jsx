@@ -1,14 +1,20 @@
-import React from "react";
 import axios from "axios";
 
 const MovieCard = ({ movie }) => {
   const handleAddToList = async () => {
     try {
+      const token = localStorage.getItem("token");
+
       const { Title } = movie;
       const res = await axios.post(
-        "https://movie-hub-server-phi.vercel.app/api/lists/add",
+        "http://localhost:5000/api/lists/add",
         {
           name: Title,
+        },
+        {
+          headers: {
+            "x-auth-token": token,
+          },
         }
       );
 

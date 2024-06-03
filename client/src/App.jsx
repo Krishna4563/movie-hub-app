@@ -16,42 +16,18 @@ const App = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      setIsAuthenticated(false);
+      setIsAuthenticated(true);
     }
   }, []);
 
   return (
     <Router>
       <Routes>
-        <Route
-          path="/"
-          element={
-            isAuthenticated ? (
-              <Navigate to="/home" />
-            ) : (
-              <Navigate to="/register" />
-            )
-          }
-        />
+        <Route path="/" element={<Navigate to="/register" />} />
+        <Route path="/register" element={<Register />} />
         <Route
           path="/login"
-          element={
-            isAuthenticated ? (
-              <Navigate to="/home" />
-            ) : (
-              <Login setIsAuthenticated={setIsAuthenticated} />
-            )
-          }
-        />
-        <Route
-          path="/register"
-          element={
-            isAuthenticated ? (
-              <Navigate to="/home" />
-            ) : (
-              <Register setIsAuthenticated={setIsAuthenticated} />
-            )
-          }
+          element={<Login setIsAuthenticated={setIsAuthenticated} />}
         />
         <Route
           path="/home"
